@@ -19,7 +19,7 @@ const connect = function () {
     });
 
     conn.on('connect', () => {
-        conn.write("Name: ASH");
+        conn.write(`"Name: ASH"`);
     });
 
     conn.on('connect', () => {
