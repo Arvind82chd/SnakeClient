@@ -21,6 +21,9 @@ const connect = function () {
         conn.write("Name: ASH");
     });
 
+    conn.on('connect', () => {
+        conn.write("Say: Hello Everyone this is Arvind");
+    });
     // conn.on("connect", () => {
     //     setInterval(() => {
     //         conn.write("Move: up");    

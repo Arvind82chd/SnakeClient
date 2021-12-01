@@ -9,53 +9,24 @@ const setupInput = function(conn) {
     stdin.resume();
     
     const handleUserInput = function() {
-        stdin.on("data", (key) => {
-            process.stdout.write('.');
+        stdin.on("data", (key) => { 
+            setTimeout(() => {
             if (key === '\u0003') {
                 process.exit();
-            }
-
-            else if (key === 'w') {
-               setTimeout(() => {
-                connection.write("Move: up");    
-               }, 50);
-                   
-               
-            }
-
-            else if (key === 'a') {
-                setTimeout(() => {
-                    connection.write("Move: left");
-                }, 50);
-                    
-        
-            }
-
-            else if (key === 's') {
-                setTimeout(() => {
-                    connection.write("Move: down");
-                }, 50);
-                  
-              
- 
-            }
-
-            else if (key === 'd') {
-                setTimeout(() => {
-                    connection.write("Move: right");
-                }, 50)
-                    
-              
-
-            }
-        });
-        
-        // conn.on("connect", () => {
-        //         setInterval(() => {
-        //             conn.write("Move: up");    
-        //         }, 50);
                 
-        //     });
+            } else if (key === 'w') {  
+                connection.write("Move: up");    
+            } else if (key === 'a') {
+                connection.write("Move: left");
+            } else if (key === 's') {
+                connection.write("Move: down");
+            } else if (key === 'd') {
+              connection.write("Move: right");
+            } 
+
+            }, 50);
+            
+        });
 
     }
 
